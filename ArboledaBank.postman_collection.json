@@ -14,12 +14,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/accounts",
+							"raw": "localhost/transfers/accounts",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
 							"path": [
+								"transfers",
 								"accounts"
 							]
 						}
@@ -32,12 +32,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/transferences",
+							"raw": "localhost/transfers/transferences",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
 							"path": [
+								"transfers",
 								"transferences"
 							]
 						}
@@ -59,12 +59,12 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/transference",
+							"raw": "localhost/transfers/transference",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
 							"path": [
+								"transfers",
 								"transference"
 							]
 						}
@@ -81,7 +81,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "localhost/payments/companies",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"payments",
+								"companies"
+							]
+						}
 					},
 					"response": []
 				},
@@ -90,7 +99,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "localhost/payments/companies/1/services",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"payments",
+								"companies",
+								"1",
+								"services"
+							]
+						}
 					},
 					"response": []
 				},
@@ -99,16 +119,51 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "localhost/payments/services/3/pending-payments?clientServiceCode=20000001A",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"payments",
+								"services",
+								"3",
+								"pending-payments"
+							],
+							"query": [
+								{
+									"key": "clientServiceCode",
+									"value": "20000001A"
+								}
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Make Payment",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
-						"url": null
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"accountId\": 7,\n    \"pendingPaymentId\": 8,\n    \"secretKey\": \"Password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/payments/pay",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"payments",
+								"pay"
+							]
+						}
 					},
 					"response": []
 				}
@@ -116,7 +171,53 @@
 		},
 		{
 			"name": "Recharges",
-			"item": []
+			"item": [
+				{
+					"name": "Get All Companies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/recharges/companies",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"recharges",
+								"companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Make Recharge",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"currency\": \"PEN\",\n    \"phoneNumber\": \"999888777\",\n    \"amount\": 10,\n    \"companyId\": 1,\n    \"secretKey\": \"Password\",\n    \"accountId\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/recharges/",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"recharges",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
