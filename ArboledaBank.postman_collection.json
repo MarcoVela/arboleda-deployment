@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "65a746ec-36d9-4f03-9b84-0fc649b1ab4c",
+		"name": "ArboledaBank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Transfers",
+			"item": [
+				{
+					"name": "Get All Accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/accounts",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Transferences",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/transferences",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transferences"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Make Transference",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceAccountNumber\": \"12592799890059\",\r\n    \"destinyAccountNumber\": \"12564676763138\",\r\n    \"transferAmount\": 522.12,\r\n    \"secretKey\": 254785\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/transference",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transference"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payments",
+			"item": [
+				{
+					"name": "Get All Companies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Company Services",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pending Payments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Make Payment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recharges",
+			"item": []
+		}
+	]
+}
